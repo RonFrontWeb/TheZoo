@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.zoo {
+    background-image: url(../img/zoo-background.jpg);
+    filter: grayscale(0);
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: night;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes night {
+    0% {
+        filter: grayscale(0) brightness(100%);
+    }
+    50% {
+        filter: grayscale(100%) brightness(20%);
+        ;
+    }
+    100% {
+        filter: grayscale(0) brightness(100%);
+    }
+}
+
+form {
+    background-color: rgba(172, 255, 47, 0.763);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+}
+
+form input,
+form select,
+form button {
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.animalStyle {
+    position: absolute;
+    /* top: 200px;
+    left: 200px; */
+}
+
+.animalStyle img {
+    height: 150px;
+    width: auto;
+}
+
+.animationOne {
+    animation-name: sideToside;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+}
+
+@keyframes sideToside {
+    0% {
+        transform: translate(0) rotate(-5deg);
+    }
+    50% {
+        transform: translate(30px)rotate(0deg);
+    }
+    100% {
+        transform: translate(0) rotate(-5deg);
+        ;
+    }
+}
+
+.animationTwo {
+    animation-name: upAndDown;
+    animation-duration: 200ms;
+    animation-iteration-count: 30;
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.zoo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: greenyellow; */
+    height: 50px;
+    width: 350px;
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    perspective: 200px;
+}
+
+.zoo-name h1 {
+    color: rgba(165, 42, 42, 0.753);
+    text-shadow: 2px 2px 2px rgb(209, 120, 69);
+    transform: rotateX(-18deg);
+    font-size: 40px;
+}
+
+.figureName {
+    color: wheat;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
