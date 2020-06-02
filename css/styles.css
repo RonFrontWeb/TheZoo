@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .zoo {
     background-image: url(../img/zoo-background.jpg);
     filter: grayscale(0);
@@ -72,8 +65,15 @@ form button {
 }
 
 .animalStyle img {
-    height: 150px;
     width: auto;
+}
+
+.animalStyle img.front {
+    height: 150px;
+}
+
+.animalStyle img.back {
+    height: 100px;
 }
 
 .animationOne {
@@ -136,4 +136,11 @@ form button {
 .figureName {
     color: wheat;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.soundToggle {
+    position: absolute;
+    height: 100px;
+    right: -10px;
+    top: -100px;
 }

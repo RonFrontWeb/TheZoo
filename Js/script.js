@@ -3,24 +3,45 @@ let form = document.querySelector("#form");
 let inputOne = document.getElementById("inputOne");
 let optionOne = document.getElementById("optionOne");
 let xy;
+let y;
 let counter = 1;
 let zooName = document.getElementById("zooName");
 let inputZooName = document.getElementById("inputZooName");
 let animation = document.getElementById("animation");
+let soundToggles = document.querySelectorAll(".soundToggle");
+let zooContainer = document.querySelector("#zooContainer");
+let soundOn = true;
+
 
 inputZooName.addEventListener("keyup", function() {
     zooName.innerHTML = inputZooName.value;
 })
 
-
+zooContainer.addEventListener("click", function(evt) {
+    evt.stopPropagation();
+    soundOn = !soundOn;
+    for (let i = 0; i < soundToggles.length; i++) {
+        soundToggles[i].classList.toggle("hidden");
+    }
+    let audioElements = document.querySelectorAll("audio");
+    for (let i = 0; i < audioElements.length; i++) {
+        console.log(soundOn);
+        if (soundOn) {
+            audioElements[i].volume = 0.2;
+        } else {
+            audioElements[i].volume = 0.0;
+        }
+    }
+})
 
 
 
 
 zoo.addEventListener("click", function(evt) {
     form.classList.toggle("hidden");
-    // console.log(evt.pageX + "-" + evt.pageY);
+    console.log(evt.pageX + "-" + evt.pageY);
     xy = `top: ${evt.pageY}px; left: ${evt.pageX}px;`
+    y = evt.pageY;
     form.style = xy;
 })
 form.addEventListener("click", function(evt) {
@@ -135,6 +156,11 @@ function createAnimal(name, image) {
 
             }
 
+            if (y >= 400) {
+                img.classList.add("front");
+            } else {
+                img.classList.add("back");
+            }
 
 
 
