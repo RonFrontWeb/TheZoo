@@ -14,7 +14,7 @@
 .zoo {
     background-image: url(../img/zoo-background.jpg);
     filter: grayscale(0);
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     height: 100vh;
     width: 1139px;
     margin: 0 auto;
