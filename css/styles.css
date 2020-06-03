@@ -27,7 +27,7 @@
         filter: grayscale(0) brightness(100%);
     }
     50% {
-        filter: grayscale(100%) brightness(20%);
+        filter: grayscale(100%) brightness(30%);
     }
     60% {
         filter: grayscale(0) brightness(100%);
@@ -110,6 +110,21 @@ form button {
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+.animationThree {
+    animation-name: turnAround;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes turnAround {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(-1);
     }
 }
 

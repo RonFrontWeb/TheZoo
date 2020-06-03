@@ -11,7 +11,8 @@ let animation = document.getElementById("animation");
 let soundToggles = document.querySelectorAll(".soundToggle");
 let zooContainer = document.querySelector("#zooContainer");
 let soundOn = true;
-
+let globalSound = 0.2;
+let roosterCall = new Audio("../sounds/roostercall.mp3");
 
 inputZooName.addEventListener("keyup", function() {
     zooName.innerHTML = inputZooName.value;
@@ -24,15 +25,23 @@ zooContainer.addEventListener("click", function(evt) {
         soundToggles[i].classList.toggle("hidden");
     }
     let audioElements = document.querySelectorAll("audio");
+    if (soundOn) {
+        globalSound = 0.2;
+        roosterCall.play();
+        console.log(roosterCall);
+    } else {
+        globalSound = 0;
+    }
     for (let i = 0; i < audioElements.length; i++) {
         console.log(soundOn);
-        if (soundOn) {
-            audioElements[i].volume = 0.2;
-        } else {
-            audioElements[i].volume = 0.0;
-        }
+        audioElements[i].volume = globalSound;
     }
 })
+
+
+
+
+
 
 
 
@@ -139,7 +148,7 @@ function createAnimal(name, image) {
             let img = document.createElement("img");
             img.src = this.animalImage;
             let sound = document.createElement("audio");
-            sound.volume = 0.2;
+            sound.volume = globalSound;
             if (zookeeper != "zookeeper-male" && zookeeper != "zookeeper-female") {
                 sound.src = this.animalSound;
 
@@ -153,6 +162,10 @@ function createAnimal(name, image) {
             }
             if (animationValue == "Animation2") {
                 img.classList.add("animationTwo")
+
+            }
+            if (animationValue == "Animation3") {
+                img.classList.add("animationThree")
 
             }
 
