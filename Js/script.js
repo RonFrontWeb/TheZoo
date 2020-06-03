@@ -39,9 +39,9 @@ zooContainer.addEventListener("click", function(evt) {
 
 zoo.addEventListener("click", function(evt) {
     form.classList.toggle("hidden");
-    console.log(evt.pageX + "-" + evt.pageY);
-    xy = `top: ${evt.pageY}px; left: ${evt.pageX}px;`
-    y = evt.pageY;
+    console.log(evt.pageX + "-" + evt.offsetY);
+    xy = `top: ${evt.offsetY}px; left: ${evt.offsetX}px;`
+    y = evt.offsetY;
     form.style = xy;
 })
 form.addEventListener("click", function(evt) {
