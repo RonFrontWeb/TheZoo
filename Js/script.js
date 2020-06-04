@@ -12,7 +12,8 @@ let soundToggles = document.querySelectorAll(".soundToggle");
 let zooContainer = document.querySelector("#zooContainer");
 let soundOn = true;
 let globalSound = 0.2;
-let roosterCall = new Audio("../sounds/roostercall.mp3");
+let roosterCall = document.getElementById("roostercall");
+
 
 inputZooName.addEventListener("keyup", function() {
     zooName.innerHTML = inputZooName.value;
